@@ -2,6 +2,7 @@ package com.dailycodebuffer.Springboot.tutorial.service;
 
 import com.dailycodebuffer.Springboot.tutorial.entity.Department;
 import com.dailycodebuffer.Springboot.tutorial.repository.DepartmentRepository;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,10 @@ public class DepartmentServiceImplementation implements DepartmentService{
     public Department saveDepartment(Department department) {
         Department save = departmentRepository.save(department);
         return save;
+    }
+
+    @Override
+    public List fetchDepartmentList() {
+        return (List) departmentRepository.findAll();
     }
 }
