@@ -1,10 +1,19 @@
 package com.dailycodebuffer.Springboot.tutorial.service;
 
 import com.dailycodebuffer.Springboot.tutorial.entity.Department;
-import org.hibernate.mapping.List;
+
+import java.util.List;
 
 public interface DepartmentService {
     public Department saveDepartment(Department department);
 
-    public List fetchDepartmentList();
+    public List<Department> fetchDepartmentList();
+
+    public Department fetchDepartmentsById(Long departmentId);
+
+    public void deleteDepartmentsById(Long departmentId);
+
+    public Department updateDepartment(Long departmentId, Department department);
+
+    public Department fetchDepartmentsByName(String departmentName);
 }
